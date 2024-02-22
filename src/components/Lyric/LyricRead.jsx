@@ -59,6 +59,7 @@ const LyricRead = () => {
        setViews(res.data.lyric.views);
        setArtistName(res.data.lyric.artistName);
        setCategory(res.data.lyric.category);
+       setText(res.data.lyric.lyric.split("\r\n"));
         setLyric((prevState) => {
           return {prevState, ...res.data.lyric}
         });
@@ -66,8 +67,7 @@ const LyricRead = () => {
         const checkLike = lyric.likes.includes(_id) 
         setHasLiked(checkLike);  
       } 
-      setText(lyric.lyric.split("\r\n"));      
-       console.log(lyric);
+       console.log("XXXXX<");
       }catch(err) {
         console.log(err?.data?.message);
         setErrMsg(err?.data?.message);
