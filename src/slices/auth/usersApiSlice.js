@@ -7,20 +7,23 @@ export const usersApiSlice = apiSlice.injectEndpoints({
             query: (data) => ({
                 url: `${USERS_URL}/jwt/auth`,
                 method: "POST",
-                body: data
+                body: data,
+                mode: 'cors'
             })
         }),
         register: builder.mutation({
             query: (data) => ({
                 url: `${USERS_URL}/jwt/register`,
                 method: "POST",
-                body: data
+                body: data,
+                mode: 'cors'
             })
         }),
         logout: builder.mutation({
             query: () => ({
                 url: `${USERS_URL}/jwt/logout`,
                 method: "POST",
+                mode: 'cors'
             })
         }),
         updateUser: builder.mutation({
@@ -28,6 +31,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
             url: `${USERS_URL}/jwt/profile`,
             method: "PUT",
             body: data,
+            mode: 'cors'
         })
         }),
         getUsers: builder.mutation
