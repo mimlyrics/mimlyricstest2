@@ -3,7 +3,7 @@ import { logout, setCredentials } from "./auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
     baseUrl: "https://mimlyricstest2-api.onrender.com",
-    credentials: 'include',
+    mode: 'cors',
     prepareHeaders: (headers, {getState}) => {
         const token = getState().auth.token;
         //console.log("Heyyy token: ", token);
